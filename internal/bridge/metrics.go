@@ -37,7 +37,7 @@ func (b *Bridge) GetBrowserMemoryMetrics() (*MemoryMetrics, error) {
 
 // GetAggregatedMemoryMetrics returns summed memory metrics across all open tabs
 func (b *Bridge) GetAggregatedMemoryMetrics() (*MemoryMetrics, error) {
-	tabIDs := b.TabManager.AccessedTabIDs()
+	tabIDs := b.AccessedTabIDs()
 	if len(tabIDs) == 0 {
 		return &MemoryMetrics{}, nil
 	}
